@@ -1,6 +1,6 @@
 FROM node:10.14.2-alpine
-ADD ./release/ /app/
+ADD ./release.tgz /app/
 WORKDIR /app
-RUN npm i
+RUN tar -zxvf release.tgz
 EXPOSE 7001
 CMD [ "npm", "start" ]
